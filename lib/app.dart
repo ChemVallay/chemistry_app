@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'route.dart';
 import 'view/screens/splash/splash_view.dart';
 
 class MyApp extends StatelessWidget {
@@ -8,7 +9,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home:SplashView(),
+      home: SplashView(),
+      onGenerateRoute: Routes.generateRoute,
+      initialRoute: '/',
     );
   }
 }

@@ -18,25 +18,27 @@ class _SplashViewState extends State<SplashView> {
     // TODO: implement initState
     super.initState();
     Timer(const Duration(seconds: 6), () {
-     // Navigator.pushNamed(context, 'routeName');
+      Navigator.pushNamed(context, '/SignUp');
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            Assets.imageChemvallayApp,
-            height: 500,
-            width: 500,
-            fit: BoxFit.cover,
-          ),
-          25.getH,
-          const CircularProgressIndicator(),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              Assets.imageChemvallayApp,
+              height: 250,
+              width: 250,
+              fit: BoxFit.cover,
+            ),
+            25.getH,
+            const CircularProgressIndicator(),
+          ],
+        ),
       ),
     );
   }

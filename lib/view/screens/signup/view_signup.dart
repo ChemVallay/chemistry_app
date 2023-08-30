@@ -1,7 +1,9 @@
+import 'package:chemvalley_app/constants/assets.dart';
 import 'package:chemvalley_app/core/extensions/plugin_sizedbox.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/theme.dart';
+import '../../widgets/custom_text_form_field.dart';
 
 class ViewSignUp extends StatefulWidget {
   const ViewSignUp({super.key});
@@ -11,83 +13,118 @@ class ViewSignUp extends StatefulWidget {
 }
 
 class _ViewSignUpState extends State<ViewSignUp> {
+  var name = TextEditingController();
+  var email = TextEditingController();
+  var password = TextEditingController();
+  GlobalKey<FormState> fKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
+    var qw = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor:Themes.colorApp,
+      backgroundColor: Themes.colorApp,
       //Theme.of(context).canvasColor,
-      body: Column(
-        children: [
-          Image.asset(
-            "",
-            width: 288,
-            height: 288,
-          ),
-          120.getH,
-          Container(
-           // width: 378,
-           // height: 407,
-           padding:EdgeInsets.all(25),
-            decoration: const BoxDecoration(
-              color: Color(0xffEEEEEE),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset(
+              Assets.imageChemvallayApp,
+              width: 188,
+              height: 188,
             ),
-            child: Center(
-              child: Form(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    const Text(
-                      'Sign Up',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
+            80.getH,
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Container(
+                width: double.infinity,
+                height: qw.height / 1.9,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: const Color(0xffEEEEEE),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Center(
+                  child: Form(
+                    key: fKey,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        40.getH,
+                        CustomTextFormField(
+                          hint: "Enter Full Name",
+                          controller: name,
+                          validator: (v) {
+                            if (v!.isEmpty || v == null) {
+                              return " Plz Enter Full Name";
+                            }
+                          },
+                        ),
+                        20.getH,
+                        CustomTextFormField(
+                          keyboardType: TextInputType.emailAddress,
+                          hint: "Enter Email",
+                          controller: email,
+                          validator: (v) {
+                            if (v!.isEmpty || v == null) {
+                              return " Plz Enter Email";
+                            }
+                          },
+                        ),
+                        20.getH,
+                        CustomTextFormField(
+                          keyboardType: TextInputType.text,
+                          obx: true,
+                          hint: "Enter Password",
+                          controller: password,
+                          validator: (v) {
+                            if (v!.isEmpty || v == null) {
+                              return " Plz Enter Password";
+                            }
+                          },
+                        ),
+                        20.getH,
+                        SizedBox(
+                          width: double.infinity,
+                          height: qw.height / 18,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.only(
+                                left: 25,
+                                right: 25,
+                              ),
+                              backgroundColor: Themes.colorApp,
+                            ),
+                            onPressed: () {
+                               Navigator.pushNamed(context, "/signin");
+                            },
+                            child: const Text('Sign Up'),
+                          ),
+                        ),
+                        Text.rich(TextSpan(children: [
+                          TextSpan(text: "Have an Account "),
+                          TextSpan(
+                              text: "Sign In",
+                              onEnter: (v) {
+                                Navigator.pushNamed(context, "/signin");
+                              }),
+                        ]))
+                      ],
                     ),
-                    20.getH,
-                    TextFormField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Enter Full Name',
-                        ),
-                        keyboardType: TextInputType.text,
-                        validator: (value) {
-                          return null;
-                        }),
-                    TextFormField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Enter Email',
-                        ),
-                        keyboardType: TextInputType.emailAddress,
-                        validator: (value) {
-                          return null;
-                        }),
-                    20.getH,
-                    TextFormField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Enter Password',
-                        ),
-                        obscureText: true,
-                        keyboardType: TextInputType.text,
-                        validator: (value) {
-                          return null;
-                        }),
-                    20.getH,
-                    ElevatedButton(
-                      style:ElevatedButton.styleFrom(
-                        backgroundColor: Themes.colorApp,
-                      ),
-                      onPressed: () {},
-                      child: const Text('Login'),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
