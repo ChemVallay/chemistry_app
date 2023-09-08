@@ -12,6 +12,16 @@ class MyApp extends StatelessWidget {
       home: SplashView(),
       onGenerateRoute: Routes.generateRoute,
       initialRoute: '/',
+      debugShowCheckedModeBanner: false,
+      //      theme: ThemeData().copyWith(primaryColor: Colors.blue), // TODO: remove this line when the app is ready to be
+      //      theme: ThemeData().copyWith(primaryColor: Colors.blue), // TODO: remove this line when the app is ready to be
+      //      theme: ThemeData().copyWith(primaryColor: Colors.red), // TODO remove this line when you want to use the app with
+      //      theme: ThemeData(primarySwatch: Colors.blue), // TODO: Add custom theme data here!
+      //      darkTheme: ThemeData.dark() ,  //TODO: Add Dark Mode support for the app (optional).
+      //    supportedLocales: [Locale('en', ''), Locale('ar')],   ///TODO: Add Localization Support to your App (Optional).
+      //    supportedLocales: [Locale('en'), Locale('ar')],   //TODO: Add Localization Support to your App (Optional).
+      //      builder: ExtendedNavigator<Router>(builder: (_, extendedNav) => Navigator(onGenerateRoute: (_) => extendedNav!.currentConfiguration)),
+      //        themeMode: ThemeMode.,   //TODO: Add Custom Theme mode to switch between light and dark modes of the application.(Optional)
     );
   }
 }
