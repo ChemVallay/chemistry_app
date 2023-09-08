@@ -2,10 +2,10 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
 part 'nav_bar_state.dart';
-
+final int index = 0;
 class NavBarCubit extends Cubit<int> {
   NavBarCubit() : super(0);
-
+ 
   void setIndex(int index, BuildContext context) {
     emit(index);
     switch (index) {

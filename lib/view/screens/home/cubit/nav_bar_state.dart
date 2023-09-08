@@ -1,6 +1,12 @@
 part of 'nav_bar_cubit.dart';
 
 @immutable
-sealed class NavBarState {}
+ class NavBarState {
+  final int index ;
 
-final class NavBarInitial extends NavBarState {}
+  NavBarState(this.index);
+}
+
+final class NavBarInitial extends NavBarState {
+  NavBarInitial(super.index);
+}

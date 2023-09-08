@@ -1,7 +1,9 @@
 import 'package:chemvalley_app/view/screens/home/cubit/nav_bar_cubit.dart';
-import 'package:flutter/material.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'view_body_home.dart';
 
 class LayoutHome extends StatefulWidget {
   const LayoutHome({super.key});
@@ -17,9 +19,21 @@ class _LayoutHomeState extends State<LayoutHome> {
   @override
   Widget build(BuildContext context) {
     List<IconData> iconList = [];
-    //var _bottomNavIndex;
 
     return Scaffold(
+      body: BlocBuilder<NavBarCubit, int>(builder: (context, state) {
+        if (state == 0) {
+          return const ViewHome();
+        } else if (state == 1) {
+          return const ViewHome();
+        } else if (state == 2) {
+          return const ViewHome();
+        } else if (state == 3) {
+          return const ViewHome();
+        } else {
+          return Container();
+        }
+      }),
       extendBody: true,
       bottomNavigationBar: BlocBuilder<NavBarCubit, int>(
         builder: (context, state) {
@@ -32,32 +46,31 @@ class _LayoutHomeState extends State<LayoutHome> {
             items: [
               /// Home
               DotNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: const Icon(Icons.home),
                 selectedColor: Colors.purple,
               ),
 
               /// Likes
               DotNavigationBarItem(
-                icon: Icon(Icons.favorite_border),
+                icon: const Icon(Icons.favorite_border),
                 selectedColor: Colors.pink,
               ),
 
               /// Search
               DotNavigationBarItem(
-                icon: Icon(Icons.search),
+                icon: const Icon(Icons.search),
                 selectedColor: Colors.orange,
               ),
 
               /// Profile
               DotNavigationBarItem(
-                icon: Icon(Icons.person),
+                icon: const Icon(Icons.person),
                 selectedColor: Colors.teal,
               ),
             ],
           );
         },
       ),
-      
     );
   }
 }
