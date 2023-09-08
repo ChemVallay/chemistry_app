@@ -7,33 +7,38 @@ class CustomContainerBodyHomeRight extends StatelessWidget {
   String name;
   double radius;
   Color colorContainer;
+  void Function()? tap;
   CustomContainerBodyHomeRight({
     Key? key,
     required this.assetSvg,
     required this.name,
     required this.radius,
     required this.colorContainer,
+    this.tap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 85,
-      height: 85,
-      decoration: BoxDecoration(
-        color: colorContainer,
-        borderRadius: BorderRadius.circular(radius),
-      ),
-      child: Column(
-        children: [
-          SvgPicture.asset(
-            assetSvg,
-            width: 20,
-            height: 20,
-            fit: BoxFit.cover,
-          ),
-          Center(child: Text(name))
-        ],
+    return GestureDetector(
+      onTap:tap,
+      child: Container(
+        width: 85,
+        height: 85,
+        decoration: BoxDecoration(
+          color: colorContainer,
+          borderRadius: BorderRadius.circular(radius),
+        ),
+        child: Column(
+          children: [
+            SvgPicture.asset(
+              assetSvg,
+              width: 20,
+              height: 20,
+              fit: BoxFit.cover,
+            ),
+            Center(child: Text(name))
+          ],
+        ),
       ),
     );
   }

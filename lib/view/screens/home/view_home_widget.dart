@@ -18,3 +18,20 @@ class ColumnLeft extends StatelessWidget {
     );
   }
 }
+
+class ColumnRight extends StatelessWidget {
+  const ColumnRight({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CustomContainerBodyHomeLeft(
+            assetSvg: 'assetSvg',
+            name: 'name',
+            radius: 25,
+            colorContainer: Colors.red)
+      ],
+    );
+  }
+}
