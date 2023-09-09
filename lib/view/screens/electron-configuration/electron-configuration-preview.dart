@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class ViewElectronConfiguration extends StatelessWidget {
   const ViewElectronConfiguration({super.key});
 
@@ -10,6 +12,6 @@ class ViewElectronConfiguration extends StatelessWidget {
       body: const Center(
         child: Text('Scaffold Body'),
       ),
-    );();
+    );
   }
 }
