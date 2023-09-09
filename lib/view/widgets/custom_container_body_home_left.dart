@@ -22,8 +22,8 @@ class CustomContainerBodyHomeLeft extends StatelessWidget {
     return GestureDetector(
       onTap: tap,
       child: Container(
-        width: 85,
-        height: 125,
+        width: 185,
+        height: 200,
         decoration: BoxDecoration(
           color: colorContainer,
           borderRadius: BorderRadius.circular(radius),

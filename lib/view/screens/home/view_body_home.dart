@@ -11,16 +11,19 @@ class ViewHome extends StatelessWidget {
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(85), child: CustomAppBar()),
       body: SingleChildScrollView(
-          child: Column(children: [
-        Row(
-          children: [
-            ColumnLeft(),
-            Column(
-              children: [],
-            )
-          ],
-        ),
-      ])),
+          child: Padding(
+        padding: EdgeInsets.only(left: 16.0, right: 16.0),
+        child: Column(children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ColumnLeft(),
+              ColumnRight(),
+              
+            ],
+          ),
+        ]),
+      )),
     );
   }
 }
