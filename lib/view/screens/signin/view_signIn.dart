@@ -98,7 +98,8 @@ class _ViewSignInState extends State<ViewSignIn> {
                             onPressed: () {
                               Navigator.pushNamed(context, "/home");
                             },
-                            child: const Text('Sign In',
+                            child: const Text(
+                              'Sign In',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,

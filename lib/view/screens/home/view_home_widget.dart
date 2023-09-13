@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../constants/assets.dart';
 import '../../widgets/custom_container_body_home_left.dart';
 
 class ColumnLeft extends StatelessWidget {
@@ -10,10 +11,11 @@ class ColumnLeft extends StatelessWidget {
     return Column(
       children: [
         CustomContainerBodyHomeLeft(
-            assetSvg: 'assetSvg',
-            name: 'name',
-            radius: 25,
-            colorContainer: Colors.red)
+          assetSvg: 'assetSvg',
+          name: 'name',
+          radius: 25,
+          colorContainer: Colors.red,
+        ),
       ],
     );
   }
@@ -27,10 +29,35 @@ class ColumnRight extends StatelessWidget {
     return Column(
       children: [
         CustomContainerBodyHomeLeft(
-            assetSvg: 'assetSvg',
-            name: 'name',
-            radius: 25,
-            colorContainer: Colors.red)
+          assetSvg: Assets.imageChemvallayApp,
+          name: 'Electron',
+          radius: 25,
+          colorContainer: Colors.red,
+        ),
+        CustomContainerBodyHomeLeft(
+          assetSvg: Assets.imageChemvallayApp,
+          name: 'Electron',
+          radius: 25,
+          colorContainer: Colors.blue.shade800,
+        ),
+        CustomContainerBodyHomeLeft(
+          assetSvg: Assets.imageChemvallayApp,
+          name: 'Electron',
+          radius: 25,
+          colorContainer: Colors.blue.shade500,
+        ),
+        CustomContainerBodyHomeLeft(
+          assetSvg: Assets.imageChemvallayApp,
+          name: 'Electron',
+          radius: 25,
+          colorContainer: Colors.red.shade200,
+        ),
+        CustomContainerBodyHomeLeft(
+          assetSvg: Assets.imageChemvallayApp,
+          name: 'Electron',
+          radius: 25,
+          colorContainer: Colors.red.shade800,
+        ),
       ],
     );
   }

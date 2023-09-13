@@ -32,39 +32,44 @@ class SingaleView extends StatelessWidget {
             'Step into the fascinating world of chemistry and embark on a'
             'journey of discovery with us'),
         30.getH,
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, '/home');
+          },
+          child: Container(
+              width: double.infinity,
+              height: 60,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+              ),
+              child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(Icons.home),
+                    Column(children: [
+                      Text(
+                        'Go to the Home page',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'Start to explore your Chemistry by app',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          // fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ])
+                  ])),
+        ),
         Container(
             width: double.infinity,
             height: 60,
-            decoration: BoxDecoration(
-              color: Colors.white,
-            ),
-            child: const Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(Icons.home),
-                  Column(children: [
-                    Text(
-                      'Go to the Home page',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'Start to explore your Chemistry by app',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        // fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ])
-                ])),
-        Container(
-            width: double.infinity,
-            height: 60,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
             ),
             child: const Row(

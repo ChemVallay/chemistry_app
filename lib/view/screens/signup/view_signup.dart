@@ -63,9 +63,10 @@ class _ViewSignUpState extends State<ViewSignUp> {
                           hint: "Enter Full Name",
                           controller: name,
                           validator: (v) {
-                            if (v!.isEmpty || v == null) {
+                            if (v!.isEmpty) {
                               return " Plz Enter Full Name";
                             }
+                            return null;
                           },
                         ),
                         20.getH,
@@ -74,9 +75,10 @@ class _ViewSignUpState extends State<ViewSignUp> {
                           hint: "Enter Email",
                           controller: email,
                           validator: (v) {
-                            if (v!.isEmpty || v == null) {
+                            if (v!.isEmpty) {
                               return " Plz Enter Email";
                             }
+                            return null;
                           },
                         ),
                         20.getH,
@@ -86,9 +88,10 @@ class _ViewSignUpState extends State<ViewSignUp> {
                           hint: "Enter Password",
                           controller: password,
                           validator: (v) {
-                            if (v!.isEmpty || v == null) {
+                            if (v!.isEmpty) {
                               return " Plz Enter Password";
                             }
+                            return null;
                           },
                         ),
                         20.getH,
@@ -104,13 +107,13 @@ class _ViewSignUpState extends State<ViewSignUp> {
                               backgroundColor: Themes.colorApp,
                             ),
                             onPressed: () {
-                               Navigator.pushNamed(context, "/signin");
+                              Navigator.pushNamed(context, "/signin");
                             },
                             child: const Text('Sign Up'),
                           ),
                         ),
                         Text.rich(TextSpan(children: [
-                          TextSpan(text: "Have an Account "),
+                          const TextSpan(text: "Have an Account "),
                           TextSpan(
                               text: "Sign In",
                               onEnter: (v) {

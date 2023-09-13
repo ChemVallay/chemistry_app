@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomContainerBodyHomeLeft extends StatelessWidget {
-  String assetSvg;
+  String? assetSvg;
+  String? assetImage;
   String name;
   double radius;
   Color colorContainer;
   void Function()? tap;
   CustomContainerBodyHomeLeft({
     Key? key,
-    required this.assetSvg,
+     this.assetSvg,
+     this.assetImage,
     required this.name,
     required this.radius,
     required this.colorContainer,
@@ -31,7 +33,13 @@ class CustomContainerBodyHomeLeft extends StatelessWidget {
         child: Column(
           children: [
             SvgPicture.asset(
-              assetSvg,
+              assetSvg!,
+              width: 30,
+              height: 30,
+              fit: BoxFit.cover,
+            ),
+            Image.asset(
+              assetSvg!,
               width: 30,
               height: 30,
               fit: BoxFit.cover,
