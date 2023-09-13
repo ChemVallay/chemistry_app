@@ -1,3 +1,4 @@
+import 'package:chemvalley_app/view/screens/electron-configuration/electron-configuration-preview.dart';
 import 'package:flutter/material.dart';
 
 import 'core/error/page/not_found_screen.dart';
@@ -20,6 +21,8 @@ class Routes {
         return MaterialPageRoute(builder: (_) => const ViewSignIn());
       case "/layout":
         return MaterialPageRoute(builder: (_) => const LayoutHome());
+      case "/electron":
+        return MaterialPageRoute(builder: (_) => const ViewElectronConfiguration());
         default:
         return MaterialPageRoute(builder: (_) => const NotFoundScreen());
     }

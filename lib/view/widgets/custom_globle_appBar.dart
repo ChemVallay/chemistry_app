@@ -29,6 +29,12 @@ class CustomGlobuleAppBar extends StatelessWidget {
       actionsIconTheme: const IconThemeData(color: Color(0xFFFDFEFE)),
       // bottomOpacity: 0.0,
       // background 
+      /*      clipBehavior: Clip.antiAliasWithSaveLayer,//Clip.hardEdge,*/
+      /*       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)) */
+      /*        toolbarOpacity: 0.0,
+      bottomOpacity: 0.0,
+      */
+      
     );
   }
 }
