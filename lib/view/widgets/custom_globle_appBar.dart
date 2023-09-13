@@ -28,6 +28,7 @@ class CustomGlobuleAppBar extends StatelessWidget {
       centerTitle: true,
       actionsIconTheme: const IconThemeData(color: Color(0xFFFDFEFE)),
       // bottomOpacity: 0.0,
+      // background 
     );
   }
 }
