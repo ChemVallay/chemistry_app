@@ -5,26 +5,36 @@ class CustomTextFormField extends StatelessWidget {
   String? Function(String?)? validator;
   TextInputType? keyboardType;
   bool? obx = false;
-  String? hint;
+  String hint;
   CustomTextFormField({
     Key? key,
     required this.controller,
     required this.validator,
     this.keyboardType,
     this.obx,
-    this.hint,
+    required this.hint,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48,
+      height: 60,
       child: TextFormField(
-        decoration:  InputDecoration(
+        //autofocus: true,
+        //autocorrect: true,
+        decoration: InputDecoration(
           border: InputBorder.none,
+          hintMaxLines: 3,
+          //isDense:true,
+          //contentPadding: const EdgeInsets.symmetric(vertical: 0.0),
+          //errorMaxLines: 0,
+          errorBorder: InputBorder.none,
           hintText: hint,
-          hintStyle: TextStyle(fontSize: 16,),
+          hintStyle: const TextStyle(
+            fontSize: 16,
+          ),
           filled: true,
           fillColor: Colors.white,
+          focusedErrorBorder: InputBorder.none,
         ),
         obscureText: obx!,
         keyboardType: keyboardType,

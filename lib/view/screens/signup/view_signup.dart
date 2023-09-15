@@ -13,9 +13,9 @@ class ViewSignUp extends StatefulWidget {
 }
 
 class _ViewSignUpState extends State<ViewSignUp> {
-  var name = TextEditingController();
-  var email = TextEditingController();
-  var password = TextEditingController();
+  TextEditingController name = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
   GlobalKey<FormState> fKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class _ViewSignUpState extends State<ViewSignUp> {
               padding: const EdgeInsets.all(15),
               child: Container(
                 width: double.infinity,
-                height: qw.height / 1.9,
+                height: qw.height / 1.0,
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: const Color(0xffEEEEEE),
@@ -60,18 +60,21 @@ class _ViewSignUpState extends State<ViewSignUp> {
                         ),
                         40.getH,
                         CustomTextFormField(
-                          hint: "Enter Full Name",
+                          keyboardType: TextInputType.text,
+                          obx: false,
+                          hint: "Enter FullName",
                           controller: name,
                           validator: (v) {
                             if (v!.isEmpty) {
-                              return " Plz Enter Full Name";
+                              return " Plz Enter FullName";
                             }
                             return null;
                           },
                         ),
-                        20.getH,
+                        13.getH,
                         CustomTextFormField(
                           keyboardType: TextInputType.emailAddress,
+                          obx: false,
                           hint: "Enter Email",
                           controller: email,
                           validator: (v) {
@@ -81,20 +84,20 @@ class _ViewSignUpState extends State<ViewSignUp> {
                             return null;
                           },
                         ),
-                        20.getH,
+                        13.getH,
                         CustomTextFormField(
-                          keyboardType: TextInputType.text,
+                          keyboardType: TextInputType.visiblePassword,
                           obx: true,
                           hint: "Enter Password",
                           controller: password,
                           validator: (v) {
                             if (v!.isEmpty) {
-                              return " Plz Enter Password";
+                              return "";
                             }
                             return null;
                           },
                         ),
-                        20.getH,
+                        13.getH,
                         SizedBox(
                           width: double.infinity,
                           height: qw.height / 18,
@@ -107,17 +110,23 @@ class _ViewSignUpState extends State<ViewSignUp> {
                               backgroundColor: Themes.colorApp,
                             ),
                             onPressed: () {
-                              Navigator.pushNamed(context, "/signin");
+                              if (fKey.currentState!.validate()) {
+                                print('saved');
+                                fKey.currentState?.save();
+                                //Navigator.pushReplacementNamed(context, "/login");
+                              }
+                              // Navigator.pushNamed(context, "/signin");
                             },
                             child: const Text('Sign Up'),
                           ),
                         ),
+                        25.getH,
                         Text.rich(TextSpan(children: [
                           const TextSpan(text: "Have an Account "),
                           TextSpan(
                               text: "Sign In",
                               onEnter: (v) {
-                                Navigator.pushNamed(context, "/signin");
+                                //Navigator.pushNamed(context, "/signin");
                               }),
                         ]))
                       ],

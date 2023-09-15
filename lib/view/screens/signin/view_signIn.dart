@@ -13,9 +13,8 @@ class ViewSignIn extends StatefulWidget {
 }
 
 class _ViewSignInState extends State<ViewSignIn> {
-  var name = TextEditingController();
-  var email = TextEditingController();
-  var password = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
   GlobalKey<FormState> fKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
@@ -63,6 +62,7 @@ class _ViewSignInState extends State<ViewSignIn> {
                           keyboardType: TextInputType.emailAddress,
                           hint: "Enter Email",
                           controller: email,
+                          obx: false,
                           validator: (v) {
                             if (v!.isEmpty) {
                               return " Plz Enter Email";
@@ -108,6 +108,7 @@ class _ViewSignInState extends State<ViewSignIn> {
                             ),
                           ),
                         ),
+                        40.getH,
                         Text.rich(TextSpan(children: [
                           const TextSpan(
                             text: "Don`t Have an Account ",
