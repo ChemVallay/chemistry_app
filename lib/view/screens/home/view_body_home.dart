@@ -9,16 +9,17 @@ class ViewHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(85), child: CustomAppBar()),
+          preferredSize: Size.fromHeight(85+90), child: CustomAppBar()),
       body: SingleChildScrollView(
           child: Padding(
-        padding: EdgeInsets.only(left: 16.0, right: 16.0),
+        padding: EdgeInsets.only(left: 8.0, right: 8.0,top:35.0),
         child: Column(children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+               ColumnRight(),
               ColumnLeft(),
-              ColumnRight(),
+             
               
             ],
           ),

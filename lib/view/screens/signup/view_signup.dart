@@ -115,7 +115,7 @@ class _ViewSignUpState extends State<ViewSignUp> {
                                 fKey.currentState?.save();
                                 //Navigator.pushReplacementNamed(context, "/login");
                               }
-                              // Navigator.pushNamed(context, "/signin");
+                              Navigator.pushNamed(context, "/layout");
                             },
                             child: const Text('Sign Up'),
                           ),

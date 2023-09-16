@@ -24,22 +24,22 @@ class CustomContainerBodyHomeLeft extends StatelessWidget {
     return GestureDetector(
       onTap: tap,
       child: Container(
-        width: 185,
-        height: 200,
+        width: 145,
+        height: 85,
         decoration: BoxDecoration(
           color: colorContainer,
           borderRadius: BorderRadius.circular(radius),
         ),
         child: Column(
           children: [
-            SvgPicture.asset(
-              assetSvg!,
-              width: 30,
-              height: 30,
-              fit: BoxFit.cover,
-            ),
+            // SvgPicture.asset(
+            //   assetSvg!,
+            //   width: 30,
+            //   height: 30,
+            //   fit: BoxFit.cover,
+            // ),
             Image.asset(
-              assetSvg!,
+              assetImage!,
               width: 30,
               height: 30,
               fit: BoxFit.cover,

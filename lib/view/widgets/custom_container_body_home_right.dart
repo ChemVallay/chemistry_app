@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomContainerBodyHomeRight extends StatelessWidget {
-  String assetSvg;
+  String? assetSvg;
+  String? assetImage;
   String name;
   double radius;
   Color colorContainer;
   void Function()? tap;
   CustomContainerBodyHomeRight({
     Key? key,
-    required this.assetSvg,
+     this.assetSvg,
+     this.assetImage,
     required this.name,
     required this.radius,
     required this.colorContainer,
@@ -22,18 +24,24 @@ class CustomContainerBodyHomeRight extends StatelessWidget {
     return GestureDetector(
       onTap:tap,
       child: Container(
-        width: 185,
-        height: 120,
+        width: 145,
+        height: 120+50,
         decoration: BoxDecoration(
           color: colorContainer,
           borderRadius: BorderRadius.circular(radius),
         ),
         child: Column(
           children: [
-            SvgPicture.asset(
-              assetSvg,
-              width: 20,
-              height: 20,
+            // SvgPicture.asset(
+            //   assetSvg,
+            //   width: 20,
+            //   height: 20,
+            //   fit: BoxFit.cover,
+            // ),
+             Image.asset(
+              assetImage!,
+              width: 30,
+              height: 30,
               fit: BoxFit.cover,
             ),
             Center(child: Text(name))
