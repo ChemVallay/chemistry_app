@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 class CustomGlobuleAppBar extends StatelessWidget {
   String name;
+  Widget? widget;
   CustomGlobuleAppBar({
     Key? key,
     required this.name,
+    required this.widget,
   }) : super(key: key);
 
   @override
@@ -22,19 +24,23 @@ class CustomGlobuleAppBar extends StatelessWidget {
       expandedHeight: MediaQuery.of(context).size.height * .328649,
       floating: true,
       pinned: true,
-      flexibleSpace:
-          FlexibleSpaceBar(background: Image.asset('assets/image/chemvallay-app.png')),
+      flexibleSpace: FlexibleSpaceBar(
+          background: Image.asset('assets/image/chemvallay-app.png')),
       titleSpacing: NavigationToolbar.kMiddleSpacing + 20,
       centerTitle: true,
       actionsIconTheme: const IconThemeData(color: Color(0xFFFDFEFE)),
       // bottomOpacity: 0.0,
-      // background 
+      // background
       /*      clipBehavior: Clip.antiAliasWithSaveLayer,//Clip.hardEdge,*/
       /*       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)) */
       /*        toolbarOpacity: 0.0,
       bottomOpacity: 0.0,
       */
-      
+      bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(60),
+          child: SizedBox(
+            child: widget,
+          )),
     );
   }
 }
