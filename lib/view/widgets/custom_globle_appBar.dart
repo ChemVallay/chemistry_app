@@ -7,7 +7,7 @@ class CustomGlobuleAppBar extends StatelessWidget {
   CustomGlobuleAppBar({
     Key? key,
     required this.name,
-    required this.widget,
+     this.widget,
   }) : super(key: key);
 
   @override
