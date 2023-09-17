@@ -49,10 +49,25 @@ class ColumnLeft extends StatelessWidget {
       children: [
         CustomContainerBodyHomeLeft(
           assetImage: Assets.imageChemvallayApp,
-          name: 'Electron',
+          name: 'Electron-1',
           radius: 25,
           colorContainer: Colors.red,
-          tap: () {},
+          tap: () {
+                        Navigator.pushNamed(context,'/electron');
+            //            Navigator.pushNamedAndRemoveUntil<void>(context, Routes.homeScreen);
+            //            Navigator.pushNamed(context, RoutesName.detail);
+            //          Get.to(() => DetailScreen());
+            //            Get.offAll<DetailScreen>(DetailScreen(), arguments: "Hello");
+            //            Get.to(()=>DetailScreen()).then((value){print("Value $value") ; });
+            //            Get.back();
+            //            print('Get to');
+            //            var route = MaterialPageRoute(builder:(context)=>DetailScreen() , settings : RouteSettings (arguments:"Hello"));
+            //            Get.offAndToNamed('/home/detail');
+            //            Get.offUntil(ModalRoute.withName("/"), (route)=>false).then((value)=>{print("Value $value")} )
+            //              Get.to(() => HomeScreen())..whenComplete(() {});
+            //                Get.offUntil(() => HomeScreen(), '/home/');
+            //                    Get.offUntilRouteName("/home/");
+          },
         ),
         10.getH,
         CustomContainerBodyHomeLeft(
