@@ -7,7 +7,7 @@ class CustomGlobuleAppBar extends StatelessWidget {
   CustomGlobuleAppBar({
     Key? key,
     required this.name,
-     this.widget,
+     //this.widget,
   }) : super(key: key);
 
   @override
@@ -36,11 +36,11 @@ class CustomGlobuleAppBar extends StatelessWidget {
       /*        toolbarOpacity: 0.0,
       bottomOpacity: 0.0,
       */
-      bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(60),
-          child: SizedBox(
-            child: widget,
-          )),
+      // bottom: PreferredSize(
+      //     preferredSize: const Size.fromHeight(60),
+      //     child: SizedBox(
+      //       child: widget,
+      //     )),
     );
   }
 }

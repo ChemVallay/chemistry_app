@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../constants/assets.dart';
 import '../../widgets/custom_container_body_home_left.dart';
 import '../../widgets/custom_container_body_home_right.dart';
+import '../electron-configuration/electron-configuration-preview.dart';
 
 class ColumnRight extends StatelessWidget {
   const ColumnRight({super.key});
@@ -53,7 +54,7 @@ class ColumnLeft extends StatelessWidget {
           radius: 25,
           colorContainer: Colors.red,
           tap: () {
-                        Navigator.pushNamed(context,'/electron');
+            Navigator.pushNamed(context, '/electron');
             //            Navigator.pushNamedAndRemoveUntil<void>(context, Routes.homeScreen);
             //            Navigator.pushNamed(context, RoutesName.detail);
             //          Get.to(() => DetailScreen());
@@ -75,7 +76,12 @@ class ColumnLeft extends StatelessWidget {
           name: 'Electron',
           radius: 25,
           colorContainer: Colors.blue.shade800,
-          tap: () {},
+          tap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (builder) =>  ViewElectronConfiguration()));
+          },
         ),
         10.getH,
         CustomContainerBodyHomeLeft(

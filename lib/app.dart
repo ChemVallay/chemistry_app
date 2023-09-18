@@ -1,3 +1,4 @@
+import 'package:chemvalley_app/view/screens/electron-configuration/electron-configuration-preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,10 +21,10 @@ class MyApp extends StatelessWidget {
           create: (context) => NavBarCubit(),
         ),
       ],
-      child: const MaterialApp(
-        home: SplashView(),
+      child:  MaterialApp(
+        home: ViewElectronConfiguration(),
         onGenerateRoute: Routes.generateRoute,
-        initialRoute: '/layout',
+       //initialRoute: '/layout',
         debugShowCheckedModeBanner: false,
         //      theme: ThemeData().copyWith(primaryColor: Colors.blue), // TODO: remove this line when the app is ready to be
         //      theme: ThemeData().copyWith(primaryColor: Colors.blue), // TODO: remove this line when the app is ready to be

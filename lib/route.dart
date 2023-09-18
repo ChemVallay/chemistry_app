@@ -22,7 +22,7 @@ class Routes {
       case "/layout":
         return MaterialPageRoute(builder: (_) => const LayoutHome());
       case "/electron":
-        return MaterialPageRoute(builder: (_) => const ViewElectronConfiguration());
+        return MaterialPageRoute(builder: (_) =>  ViewElectronConfiguration());
         default:
         return MaterialPageRoute(builder: (_) => const NotFoundScreen());
     }
